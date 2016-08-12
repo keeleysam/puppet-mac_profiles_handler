@@ -17,7 +17,7 @@ Facter.add(:profiles) do
           'verification_state' => item['spconfigprofile_verification_state'],
           'uuid' => item['spconfigprofile_profile_uuid'],
           'organization' => item['spconfigprofile_organization'],
-          'install_date' => DateTime.parse(item['spconfigprofile_install_date'].scan(/\(([^\)]+)\)/).last.first),
+          'install_date' => DateTime.parse(item['spconfigprofile_install_date'].scan(/\(([^\)]+)\)/).last.first).to_s,
           'payload' => []
         }
 
